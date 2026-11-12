@@ -1,4 +1,6 @@
-# Dependencies
+# Firebase cache
+.firebase/
+.firebaserc.bak
 node_modules/
 */node_modules/
 Frontend/node_modules/
