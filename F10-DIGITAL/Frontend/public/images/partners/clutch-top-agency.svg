@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <!-- Clutch Logo -->
+  <text x="20" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="#202522" letter-spacing="-0.5">Clutch</text>
+  <circle cx="108" cy="35" r="4.5" fill="#FF3C38"/>
+  <!-- Clutch Tagline -->
+  <text x="21" y="54" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#777A75" letter-spacing="0.8">TOP B2B FIRMS THAT DELIVER</text>
+</svg>

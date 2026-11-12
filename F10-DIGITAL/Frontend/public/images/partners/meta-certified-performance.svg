@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <!-- Meta Infinity Symbol -->
+  <path d="M42.2 19.4c-3.1 0-5.9 1.4-7.8 3.7-2-2.3-4.8-3.7-7.9-3.7-7.8 0-14 6.7-14 15 0 8.3 6.2 15 14 15 3.3 0 6.3-1.5 8.3-4 1.9 2.5 5 4 8.4 4 7.8 0 14-6.7 14-15 0-8.3-6.2-15-14-15zm-15.7 24.3c-4.9 0-8.8-4.2-8.8-9.3s3.9-9.3 8.8-9.3c3.2 0 6 1.8 7.5 4.5l-4.5 4.8 4.5 4.8c-1.5 2.7-4.3 4.5-7.5 4.5zm15.7 0c-3.2 0-6-1.8-7.5-4.5l4.5-4.8-4.5-4.8c1.5-2.7 4.3-4.5 7.5-4.5 4.9 0 8.8 4.2 8.8 9.3s-3.9 9.3-8.8 9.3z" fill="#0081FB"/>
+  <!-- Meta Wordmark -->
+  <text x="66" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#202522" letter-spacing="-0.5">Meta</text>
+  <!-- Certified Subtitle Badge -->
+  <rect x="12" y="52" width="76" height="14" rx="3" fill="#0081FB" fill-opacity="0.12"/>
+  <text x="50" y="62.5" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#0064E0" text-anchor="middle" letter-spacing="0.4">CERTIFIED</text>
+  <text x="96" y="62" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="600" fill="#777A75">Performance Specialist</text>
+</svg>

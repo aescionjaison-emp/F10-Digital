@@ -1,0 +1,81 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("SUPER_ADMIN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Enquiry {
+  id              String   @id @default(uuid())
+  name            String
+  email           String
+  phone           String?
+  company         String?
+  serviceInterest String?
+  budget          String?
+  message         String
+  status          String   @default("NEW") // NEW, IN_PROGRESS, QUALIFIED, CLOSED
+  notes           String?
+  source          String   @default("WEBSITE")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Service {
+  id           String   @id @default(uuid())
+  slug         String   @unique
+  title        String
+  shortDesc    String
+  fullDesc     String
+  division     String   // digital-tech, growth-marketing, media-production
+  deliverables String   // JSON array string
+  techStack    String?  // JSON array string
+  image        String
+  featured     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model CaseStudy {
+  id             String   @id @default(uuid())
+  slug           String   @unique
+  clientCategory String
+  title          String
+  industry       String
+  challenge      String
+  solution       String
+  result         String
+  metrics        String   // JSON array string
+  image          String
+  featured       Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model BlogPost {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  title     String
+  excerpt   String
+  content   String
+  author    String
+  date      String
+  readTime  String
+  category  String
+  image     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+

@@ -1,0 +1,46 @@
+name: Deploy to Firebase Hosting on merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: 'F10-DIGITAL/Frontend/package-lock.json'
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd F10-DIGITAL/Frontend
+          npm ci || npm install
+
+      - name: Build Static Export
+        run: |
+          cd F10-DIGITAL/Frontend
+          npm run build
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_F10_DIGITAL }}'
+          channelId: live
+          projectId: f10-digital
+        continue-on-error: true
+
+      - name: Deploy via Firebase CLI Token (Fallback)
+        if: env.FIREBASE_TOKEN != ''
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --only hosting --token "$FIREBASE_TOKEN"
