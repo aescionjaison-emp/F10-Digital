@@ -31,73 +31,66 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-[#202522]">
+    <div className="min-h-screen bg-[#FFFFFF] text-[#0F172A]">
       {/* Header */}
-      <section className="pt-36 pb-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        <div className="max-w-4xl space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#B69A72] font-semibold">
-              Capabilities Architecture
-            </span>
-            <div className="h-[1px] w-12 bg-[#B69A72]/40" />
-          </div>
-
+      <section className="pt-24 pb-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="max-w-4xl space-y-2.5">
           <h1 className="text-4xl sm:text-6xl font-black font-heading tracking-tight leading-[1.08]">
             Capabilities That Move <br />
-            <span className="text-[#B69A72]">Businesses Forward.</span>
+            <span className="text-[#2554D7]">Businesses Forward.</span>
           </h1>
 
-          <p className="text-base text-[#777A75] font-light max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[#64748B] font-light max-w-xl leading-relaxed">
             End-to-end capabilities engineered to build digital infrastructure, drive qualified acquisition, and produce cinema-grade brand narratives.
           </p>
         </div>
       </section>
 
-      {/* Divisions with Large Image Panels */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-32 space-y-24">
+      {/* Divisions with Image Panels */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-20 space-y-14">
         {divisions.map((div, dIdx) => (
-          <section key={div.id} id={div.id} className="scroll-mt-32 space-y-8">
-            <div className="border-b border-[#E2DED6] pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <section key={div.id} id={div.id} className="scroll-mt-24 space-y-6">
+            <div className="border-b border-[#E2E8F0] pb-3 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
               <div>
-                <span className="text-xs font-mono text-[#B69A72] block">
+                <span className="text-xs font-mono font-bold text-[#2554D7] block">
                   DIVISION 0{dIdx + 1}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black font-heading text-[#202522]">
+                <h2 className="text-2xl sm:text-3xl font-black font-heading text-[#0F172A]">
                   {div.name}
                 </h2>
               </div>
-              <p className="text-xs text-[#777A75] font-light">
+              <p className="text-xs text-[#64748B] font-light">
                 {div.tagline}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {div.services.map((srv) => (
                 <Link
                   key={srv.id}
                   href={`/services/${srv.slug}`}
-                  className="group rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#E2DED6] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                  className="group rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#E2E8F0] shadow-xs hover:shadow-md transition-all flex flex-col justify-between hover:border-[#2554D7]"
                 >
-                  <div className="relative h-56 w-full overflow-hidden">
+                  <div className="relative h-44 w-full overflow-hidden">
                     <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-105"
                       style={{ backgroundImage: `url('${srv.image}')` }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   </div>
 
-                  <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
+                  <div className="p-5 space-y-2.5 flex-grow flex flex-col justify-between">
                     <div>
-                      <h3 className="text-lg font-bold font-heading text-[#202522] group-hover:text-[#B69A72] transition-colors flex items-center justify-between">
+                      <h3 className="text-base font-bold font-heading text-[#0F172A] group-hover:text-[#2554D7] transition-colors flex items-center justify-between">
                         <span>{srv.title}</span>
-                        <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                        <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#2554D7]" />
                       </h3>
-                      <p className="text-xs text-[#777A75] font-light line-clamp-2 mt-1">
+                      <p className="text-xs text-[#64748B] font-light line-clamp-2 mt-1">
                         {srv.shortDesc}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-[#E2DED6]/60 text-[11px] font-mono text-[#B69A72]">
+                    <div className="pt-2.5 border-t border-[#F1F5F9] text-[11px] font-mono text-[#2554D7] font-semibold">
                       Inspect Detailed Specifications →
                     </div>
                   </div>

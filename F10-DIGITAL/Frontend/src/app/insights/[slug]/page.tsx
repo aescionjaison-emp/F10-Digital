@@ -1,12 +1,14 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { BLOG_POSTS, COMPANY_INFO } from "@/lib/data";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
 }
+
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map((b) => ({
@@ -25,39 +27,39 @@ export default async function InsightDetailPage({ params }: ArticlePageProps) {
   const paragraphs = post.content.split("\n\n");
 
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-[#202522]">
+    <div className="min-h-screen bg-[#FFFFFF] text-[#0F172A]">
       {/* Header */}
-      <section className="pt-36 pb-16 max-w-4xl mx-auto px-6 sm:px-12">
+      <section className="pt-24 pb-10 max-w-4xl mx-auto px-6 sm:px-12">
         <Link
           href="/insights"
-          className="inline-flex items-center gap-2 text-xs font-mono text-[#777A75] hover:text-[#202522] mb-8 transition-colors uppercase tracking-wider"
+          className="inline-flex items-center gap-1.5 text-xs font-mono text-[#64748B] hover:text-[#2554D7] mb-6 transition-colors uppercase tracking-wider"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Insights</span>
         </Link>
 
-        <div className="space-y-4">
-          <div className="flex items-center gap-3 text-xs font-mono text-[#777A75]">
-            <span className="text-[#B69A72] font-semibold uppercase">{post.category}</span>
+        <div className="space-y-3">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#64748B]">
+            <span className="text-[#2554D7] font-bold uppercase">{post.category}</span>
             <span>·</span>
             <span>{post.date}</span>
             <span>·</span>
             <span>{post.readTime}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black font-heading tracking-tight text-[#202522] leading-[1.15]">
+          <h1 className="text-3xl sm:text-5xl font-black font-heading tracking-tight text-[#0F172A] leading-[1.15]">
             {post.title}
           </h1>
 
-          <div className="text-xs font-mono text-[#777A75] pt-2">
+          <div className="text-xs font-mono text-[#64748B] pt-1">
             By {post.author}
           </div>
         </div>
       </section>
 
       {/* Featured Image */}
-      <section className="max-w-4xl mx-auto px-6 sm:px-12 pb-16">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[360px] sm:h-[480px] w-full">
+      <section className="max-w-4xl mx-auto px-6 sm:px-12 pb-10">
+        <div className="relative rounded-2xl overflow-hidden shadow-md h-[280px] sm:h-[380px] w-full border border-[#E2E8F0]">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('${post.image}')` }}
@@ -66,12 +68,12 @@ export default async function InsightDetailPage({ params }: ArticlePageProps) {
       </section>
 
       {/* Body */}
-      <article className="max-w-4xl mx-auto px-6 sm:px-12 pb-32">
-        <div className="space-y-6 text-base sm:text-lg text-[#202522] font-light leading-relaxed">
+      <article className="max-w-4xl mx-auto px-6 sm:px-12 pb-20">
+        <div className="space-y-4 text-sm sm:text-base text-[#0F172A] font-light leading-relaxed">
           {paragraphs.map((para, i) => {
             if (para.startsWith("### ")) {
               return (
-                <h3 key={i} className="text-2xl font-bold font-heading text-[#202522] pt-6 pb-2">
+                <h3 key={i} className="text-xl sm:text-2xl font-bold font-heading text-[#0F172A] pt-4 pb-1">
                   {para.replace("### ", "")}
                 </h3>
               );
@@ -79,9 +81,9 @@ export default async function InsightDetailPage({ params }: ArticlePageProps) {
             if (para.startsWith("1. ") || para.startsWith("- ")) {
               const lines = para.split("\n");
               return (
-                <ul key={i} className="space-y-2 pl-6 my-4 list-disc text-base text-[#777A75]">
+                <ul key={i} className="space-y-1.5 pl-5 my-2 list-disc text-sm text-[#64748B]">
                   {lines.map((line, li) => (
-                    <li key={li} className="text-[#202522]">
+                    <li key={li} className="text-[#0F172A]">
                       {line.replace(/^[0-9]+\.\s+/, "").replace(/^-\s+/, "")}
                     </li>
                   ))}
@@ -89,7 +91,7 @@ export default async function InsightDetailPage({ params }: ArticlePageProps) {
               );
             }
             return (
-              <p key={i} className="text-[#777A75]">
+              <p key={i} className="text-[#64748B]">
                 {para}
               </p>
             );
@@ -97,17 +99,17 @@ export default async function InsightDetailPage({ params }: ArticlePageProps) {
         </div>
 
         {/* Footer Scoping Box */}
-        <div className="mt-16 p-8 rounded-2xl bg-[#E8E4DC] border border-[#DCD7CD] space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#B69A72]">
+        <div className="mt-12 p-6 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] space-y-3">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#2554D7] font-bold">
             Strategic Implementation
           </span>
-          <h4 className="text-2xl font-bold font-heading text-[#202522]">
+          <h4 className="text-xl font-bold font-heading text-[#0F172A]">
             Need this architecture deployed for your enterprise?
           </h4>
-          <div className="pt-2">
+          <div className="pt-1">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202522] text-[#F7F5F0] text-xs font-bold uppercase tracking-wider"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2554D7] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#1D4ED8] transition-all"
             >
               <span>Consult With Leadership</span>
             </Link>

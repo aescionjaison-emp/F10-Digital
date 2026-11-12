@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { COMPANY_INFO, WHY_F10_PILLARS } from "@/lib/data";
 
 export const metadata = {
@@ -10,31 +10,24 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-[#202522]">
+    <div className="min-h-screen bg-[#FFFFFF] text-[#0F172A]">
       {/* Editorial Header */}
-      <section className="pt-36 pb-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        <div className="max-w-4xl space-y-6">
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#B69A72] font-semibold">
-              The F10 Heritage
-            </span>
-            <div className="h-[1px] w-12 bg-[#B69A72]/40" />
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-heading tracking-tight leading-[1.05]">
+      <section className="pt-24 pb-12 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="max-w-4xl space-y-3">
+          <h1 className="text-4xl sm:text-6xl font-black font-heading tracking-tight leading-[1.05]">
             Building Digital Growth. <br />
-            <span className="text-[#B69A72]">Enabling Performance Transformation.</span>
+            <span className="text-[#2554D7]">Enabling Performance Transformation.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-[#777A75] font-light leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-[#64748B] font-light leading-relaxed max-w-2xl">
             We bridge the divide between commercial strategy, modern enterprise technology, growth marketing, AI automation, and cinematic media production.
           </p>
         </div>
       </section>
 
-      {/* Large 70% Architectural Visual */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-24">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[450px] sm:h-[620px] w-full">
+      {/* Large Architectural Visual */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-14">
+        <div className="relative rounded-2xl overflow-hidden shadow-lg h-[340px] sm:h-[460px] w-full border border-[#E2E8F0]">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -42,26 +35,26 @@ export default function AboutPage() {
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-8 right-8 text-white flex items-center justify-between text-xs font-mono">
+          <div className="absolute bottom-6 left-6 right-6 text-white flex items-center justify-between text-xs font-mono">
             <span>Dubai HQ & Cross-Border Delivery Labs</span>
-            <span className="text-[#B69A72]">UAE · INDIA</span>
+            <span className="text-[#93C5FD]">UAE · INDIA</span>
           </div>
         </div>
       </section>
 
       {/* Verified Stats Row */}
-      <section className="py-16 bg-[#E8E4DC] border-t border-b border-[#DCD7CD]">
+      <section className="py-10 bg-[#F8FAFC] border-t border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {COMPANY_INFO.stats.map((s) => (
               <div key={s.label}>
-                <div className="text-4xl sm:text-5xl font-black text-[#202522] font-heading">
+                <div className="text-3xl sm:text-4xl font-black text-[#0F172A] font-heading">
                   {s.value}
                 </div>
-                <div className="text-xs uppercase tracking-wider text-[#B69A72] font-mono mt-1 font-semibold">
+                <div className="text-xs uppercase tracking-wider text-[#2554D7] font-mono mt-1 font-bold">
                   {s.label}
                 </div>
-                <div className="text-xs text-[#777A75] mt-0.5">
+                <div className="text-xs text-[#64748B] mt-0.5">
                   {s.detail}
                 </div>
               </div>
@@ -71,40 +64,37 @@ export default function AboutPage() {
       </section>
 
       {/* Why F10 Digital — 6 Minimal Pillars */}
-      <section className="py-28 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        <div className="max-w-2xl mb-16 space-y-3">
-          <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#B69A72] font-semibold">
-            Operational Principles
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black font-heading text-[#202522]">
+      <section className="py-14 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="max-w-2xl mb-8 space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-black font-heading text-[#0F172A]">
             Why Forward-Thinking Enterprises Partner with F10.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {WHY_F10_PILLARS.map((p, idx) => (
             <div
               key={p.title}
-              className="p-8 rounded-2xl bg-[#FFFFFF] border border-[#E2DED6] shadow-sm space-y-3"
+              className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2E8F0] shadow-xs space-y-2.5 hover:border-[#2554D7] transition-all"
             >
-              <span className="text-xs font-mono font-bold text-[#B69A72]">
+              <span className="text-xs font-mono font-bold text-[#2554D7]">
                 0{idx + 1}
               </span>
-              <h3 className="text-lg font-bold font-heading text-[#202522]">
+              <h3 className="text-base font-bold font-heading text-[#0F172A]">
                 {p.title}
               </h3>
-              <p className="text-xs text-[#777A75] font-light leading-relaxed">
+              <p className="text-xs text-[#64748B] font-light leading-relaxed">
                 {p.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-[#E2DED6] flex items-center justify-between">
-          <span className="text-xs font-mono text-[#777A75]">Continuous Improvement & Scalable Support</span>
+        <div className="mt-10 pt-6 border-t border-[#E2E8F0] flex items-center justify-between">
+          <span className="text-xs font-mono text-[#64748B]">Continuous Improvement & Scalable Support</span>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#202522] hover:text-[#B69A72] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0F172A] hover:text-[#2554D7] transition-colors"
           >
             <span>Start a Conversation</span>
             <ArrowRight className="w-4 h-4" />

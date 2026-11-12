@@ -9,6 +9,7 @@ export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoWrapRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -68,12 +69,21 @@ export function HeroSection() {
     const ctx = gsap.context(() => {
       const entranceTl = gsap.timeline({ defaults: { ease: EASE_PRIMARY } });
 
+      if (logoRef.current) {
+        entranceTl.fromTo(
+          logoRef.current,
+          { opacity: 0, scale: 0.9, y: 15 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.5, delay: 0.05 }
+        );
+      }
+
       const words = headlineRef.current?.querySelectorAll(".hero-word");
       if (words && words.length > 0) {
         entranceTl.fromTo(
           words,
           { opacity: 0, y: 25 },
-          { opacity: 1, y: 0, duration: 0.45, stagger: 0.035, delay: 0.05 }
+          { opacity: 1, y: 0, duration: 0.45, stagger: 0.035 },
+          "-=0.35"
         );
       }
 
@@ -104,7 +114,7 @@ export function HeroSection() {
         );
       }
 
-      // Smooth scroll-linked video scale & elevation
+      // Smooth scroll-linked video scale
       if (videoWrapRef.current) {
         gsap.to(videoWrapRef.current, {
           scale: 1.06,
@@ -177,6 +187,16 @@ export function HeroSection() {
           
           {/* Main Headline & Supporting Text & Bottom-Left Verified Badges */}
           <div className="lg:col-span-8 space-y-2.5">
+            
+            {/* Official F10 Digital Logo (Placed ABOVE Building Digital Growth lines - Image 4) */}
+            <div ref={logoRef} className="mb-2 sm:mb-3">
+              <img
+                src="/images/f10-official-logo.png"
+                alt="F10 Digital"
+                className="h-12 sm:h-16 w-auto object-contain filter drop-shadow-[0_4px_16px_rgba(255,255,255,0.25)] transition-transform duration-200 hover:scale-105"
+              />
+            </div>
+
             <h1
               ref={headlineRef}
               className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#FFFFFF] tracking-tight leading-[0.96] font-heading uppercase"
@@ -239,20 +259,22 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Action CTAs */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-end space-y-2.5">
-            <div ref={ctaRef} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+          {/* Right Action CTAs: Compact & Professional (Image 1 Fix) */}
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-end space-y-2">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full lg:w-auto">
+              {/* Primary CTA: Compact & Professional */}
               <Link
                 href="/services"
-                className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#2554D7] text-white hover:bg-[#1D4ED8] text-xs uppercase tracking-[0.2em] font-bold transition-all duration-200 shadow-lg hover:scale-105 active:scale-95 overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#2554D7] text-white hover:bg-[#1D4ED8] text-[11px] sm:text-xs uppercase tracking-[0.14em] font-bold transition-all duration-200 shadow-md hover:scale-105 active:scale-95 overflow-hidden"
               >
                 <span className="relative z-10">Explore Our Capabilities</span>
-                <ArrowRight className="w-4 h-4 text-white transition-transform duration-200 group-hover:translate-x-1 relative z-10" />
+                <ArrowRight className="w-3.5 h-3.5 text-white transition-transform duration-200 group-hover:translate-x-1 relative z-10" />
               </Link>
 
+              {/* Secondary CTA: Compact & Professional */}
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-[#FFFFFF] border border-white/20 text-xs uppercase tracking-[0.2em] font-semibold backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95"
+                className="group inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-[#FFFFFF] border border-white/20 text-[11px] sm:text-xs uppercase tracking-[0.14em] font-semibold backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95"
               >
                 <span>Let's Talk</span>
               </Link>

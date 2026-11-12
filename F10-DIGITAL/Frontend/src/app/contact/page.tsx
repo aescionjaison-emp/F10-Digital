@@ -71,70 +71,63 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-[#202522]">
+    <div className="min-h-screen bg-[#FFFFFF] text-[#0F172A]">
       {/* Header */}
-      <section className="pt-36 pb-16 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        <div className="max-w-4xl space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#B69A72] font-semibold">
-              Project Scoping & Advisory
-            </span>
-            <div className="h-[1px] w-12 bg-[#B69A72]/40" />
-          </div>
-
+      <section className="pt-24 pb-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="max-w-4xl space-y-2.5">
           <h1 className="text-4xl sm:text-6xl font-black font-heading tracking-tight leading-[1.08]">
             Start a <br />
-            <span className="text-[#B69A72]">Conversation.</span>
+            <span className="text-[#2554D7]">Conversation.</span>
           </h1>
 
-          <p className="text-base text-[#777A75] font-light max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[#64748B] font-light max-w-xl leading-relaxed">
             Whether architecting an enterprise web portal, scaling regional acquisition, or producing cinema-grade brand films, our leadership desk is ready to scope your roadmap.
           </p>
         </div>
       </section>
 
       {/* Main Grid */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-12 rounded-2xl bg-[#FFFFFF] border border-[#E2DED6] shadow-sm">
+            <div className="p-6 sm:p-10 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-xs">
               {isSubmitted ? (
-                <div className="py-12 text-center space-y-6">
-                  <div className="w-16 h-16 rounded-full bg-[#E8E4DC] text-[#B69A72] mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-8 h-8" />
+                <div className="py-8 text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-[#EFF6FF] text-[#2554D7] mx-auto flex items-center justify-center">
+                    <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h3 className="text-2xl font-bold font-heading text-[#202522]">
+                  <h3 className="text-2xl font-bold font-heading text-[#0F172A]">
                     Brief Transmitted Successfully
                   </h3>
-                  <p className="text-sm text-[#777A75] max-w-md mx-auto leading-relaxed font-light">
-                    Thank you, <span className="font-semibold text-[#202522]">{formData.name}</span>. Your brief has been routed to Daniel and our leadership team. We respond within 2 to 4 business hours.
+                  <p className="text-xs sm:text-sm text-[#64748B] max-w-md mx-auto leading-relaxed font-light">
+                    Thank you, <span className="font-semibold text-[#0F172A]">{formData.name}</span>. Your brief has been routed to Daniel and our leadership team. We respond within 2 to 4 business hours.
                   </p>
-                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
                       href={generateWhatsAppUrl()}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-6 py-3 rounded-full bg-[#202522] text-[#F7F5F0] text-xs font-bold uppercase tracking-wider"
+                      className="px-5 py-2.5 rounded-full bg-[#2554D7] text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#1D4ED8]"
                     >
                       Continue on WhatsApp
                     </a>
                     <button
                       onClick={() => setIsSubmitted(false)}
-                      className="px-6 py-3 rounded-full bg-[#F7F5F0] text-[#202522] text-xs font-semibold border border-[#E2DED6]"
+                      className="px-5 py-2.5 rounded-full bg-white text-[#0F172A] text-xs font-semibold border border-[#E2E8F0]"
                     >
                       Submit Another Brief
                     </button>
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="border-b border-[#E2DED6] pb-4">
-                    <h3 className="text-xl font-bold font-heading text-[#202522]">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="border-b border-[#E2E8F0] pb-3">
+                    <h3 className="text-lg font-bold font-heading text-[#0F172A]">
                       Executive Inquiry Form
                     </h3>
-                    <p className="text-xs text-[#777A75] mt-0.5">
+                    <p className="text-xs text-[#64748B]">
                       Protected under mutual non-disclosure obligations.
                     </p>
                   </div>
@@ -145,9 +138,9 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                         Your Name *
                       </label>
                       <input
@@ -157,12 +150,12 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="e.g. Tariq Al Mansoori"
-                        className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] placeholder-[#777A75]/60 text-sm focus:outline-none focus:border-[#B69A72]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] placeholder-[#94A3B8] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                         Work Email *
                       </label>
                       <input
@@ -172,14 +165,14 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="tariq@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] placeholder-[#777A75]/60 text-sm focus:outline-none focus:border-[#B69A72]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] placeholder-[#94A3B8] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7]"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                         Phone / WhatsApp
                       </label>
                       <input
@@ -188,12 +181,12 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+971 50 123 4567"
-                        className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] placeholder-[#777A75]/60 text-sm focus:outline-none focus:border-[#B69A72]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] placeholder-[#94A3B8] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                         Company Name
                       </label>
                       <input
@@ -202,21 +195,21 @@ export default function ContactPage() {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="e.g. Apex Holdings"
-                        className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] placeholder-[#777A75]/60 text-sm focus:outline-none focus:border-[#B69A72]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] placeholder-[#94A3B8] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7]"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                         Primary Scope
                       </label>
                       <select
                         name="serviceInterest"
                         value={formData.serviceInterest}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] text-sm focus:outline-none focus:border-[#B69A72]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7]"
                       >
                         {serviceOptions.map((opt) => (
                           <option key={opt} value={opt}>
@@ -227,14 +220,14 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                      <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                         Budget Range
                       </label>
                       <select
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] text-sm focus:outline-none focus:border-[#B69A72]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7]"
                       >
                         {budgetOptions.map((b) => (
                           <option key={b} value={b}>
@@ -246,24 +239,24 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#777A75] mb-1.5 font-semibold">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#64748B] mb-1 font-semibold">
                       Project Objective / Key Requirements
                     </label>
                     <textarea
                       name="message"
-                      rows={4}
+                      rows={3}
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Briefly describe your objectives, deliverables, and target timeline..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#F7F5F0] border border-[#E2DED6] text-[#202522] placeholder-[#777A75]/60 text-sm focus:outline-none focus:border-[#B69A72] resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0F172A] placeholder-[#94A3B8] text-xs sm:text-sm focus:outline-none focus:border-[#2554D7] resize-none"
                     />
                   </div>
 
-                  <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+                  <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#202522] text-[#F7F5F0] hover:bg-[#141715] text-xs uppercase tracking-wider font-bold transition-all shadow-md flex items-center justify-center gap-2"
+                      className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#2554D7] text-white hover:bg-[#1D4ED8] text-xs uppercase tracking-wider font-bold transition-all shadow-md flex items-center justify-center gap-2"
                     >
                       <span>{isSubmitting ? "Transmitting Brief..." : "Submit Discovery Brief"}</span>
                       <Send className="w-3.5 h-3.5" />
@@ -273,9 +266,9 @@ export default function ContactPage() {
                       href={generateWhatsAppUrl()}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#E8E4DC] hover:bg-[#DCD7CD] text-[#202522] text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-2"
+                      className="w-full sm:w-auto px-5 py-3 rounded-full bg-white hover:bg-[#F1F5F9] text-[#0F172A] border border-[#E2E8F0] text-xs uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-2"
                     >
-                      <MessageSquare className="w-4 h-4 text-[#B69A72]" />
+                      <MessageSquare className="w-3.5 h-3.5 text-[#2554D7]" />
                       <span>Direct WhatsApp Handoff</span>
                     </a>
                   </div>
@@ -285,37 +278,37 @@ export default function ContactPage() {
           </div>
 
           {/* Direct Leadership Info */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-2xl bg-[#E8E4DC] border border-[#DCD7CD] space-y-6">
+          <div className="lg:col-span-5 space-y-4">
+            <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] space-y-4">
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#B69A72]">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#2554D7] font-bold">
                   Direct Contacts
                 </span>
-                <h3 className="text-xl font-bold font-heading text-[#202522] mt-1">
+                <h3 className="text-lg font-bold font-heading text-[#0F172A] mt-1">
                   Executive Desk
                 </h3>
               </div>
 
-              <div className="space-y-4 text-xs">
+              <div className="space-y-2.5 text-xs">
                 <a
                   href={`tel:${COMPANY_INFO.phone}`}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-[#FFFFFF] border border-[#E2DED6] hover:border-[#B69A72] transition-colors"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-[#E2E8F0] hover:border-[#2554D7] transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-[#B69A72]" />
+                  <Phone className="w-4 h-4 text-[#2554D7]" />
                   <div>
-                    <span className="text-[#777A75] block text-[10px] uppercase font-mono">Telephone</span>
-                    <span className="font-bold text-[#202522] font-mono">{COMPANY_INFO.phone}</span>
+                    <span className="text-[#64748B] block text-[10px] uppercase font-mono">Telephone</span>
+                    <span className="font-bold text-[#0F172A] font-mono">{COMPANY_INFO.phone}</span>
                   </div>
                 </a>
 
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-[#FFFFFF] border border-[#E2DED6] hover:border-[#B69A72] transition-colors"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-[#E2E8F0] hover:border-[#2554D7] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#B69A72]" />
+                  <Mail className="w-4 h-4 text-[#2554D7]" />
                   <div>
-                    <span className="text-[#777A75] block text-[10px] uppercase font-mono">Email Inquiries</span>
-                    <span className="font-bold text-[#202522] font-mono">{COMPANY_INFO.email}</span>
+                    <span className="text-[#64748B] block text-[10px] uppercase font-mono">Email Inquiries</span>
+                    <span className="font-bold text-[#0F172A] font-mono">{COMPANY_INFO.email}</span>
                   </div>
                 </a>
 
@@ -323,30 +316,30 @@ export default function ContactPage() {
                   href={`https://wa.me/${COMPANY_INFO.whatsappNumber}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 p-4 rounded-xl bg-[#FFFFFF] border border-[#B69A72]/40 hover:border-[#B69A72] transition-colors"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-[#2554D7]/30 hover:border-[#2554D7] transition-colors"
                 >
-                  <MessageSquare className="w-4 h-4 text-[#B69A72]" />
+                  <MessageSquare className="w-4 h-4 text-[#2554D7]" />
                   <div>
-                    <span className="text-[#B69A72] block text-[10px] uppercase font-mono">Immediate 24/7 Routing</span>
-                    <span className="font-bold text-[#202522]">WhatsApp Senior Partner Direct</span>
+                    <span className="text-[#2554D7] block text-[10px] uppercase font-mono font-bold">Immediate 24/7 Routing</span>
+                    <span className="font-bold text-[#0F172A]">WhatsApp Senior Partner Direct</span>
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Hubs */}
-            <div className="p-8 rounded-2xl bg-[#FFFFFF] border border-[#E2DED6] space-y-4">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#B69A72]">
+            <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#E2E8F0] space-y-3">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#2554D7] font-bold">
                 Delivery Hubs
               </span>
-              <div className="space-y-3 text-xs">
+              <div className="space-y-2 text-xs">
                 {COMPANY_INFO.locations.map((loc) => (
-                  <div key={loc.city} className="flex items-start justify-between border-b border-[#E2DED6]/60 pb-2">
+                  <div key={loc.city} className="flex items-start justify-between border-b border-[#F1F5F9] pb-1.5">
                     <div>
-                      <span className="font-bold text-[#202522] block">{loc.city}, {loc.country}</span>
-                      <span className="text-[#777A75] text-[11px]">{loc.role}</span>
+                      <span className="font-bold text-[#0F172A] block">{loc.city}, {loc.country}</span>
+                      <span className="text-[#64748B] text-[11px]">{loc.role}</span>
                     </div>
-                    <span className="text-[10px] font-mono text-[#B69A72]">{loc.flag}</span>
+                    <span className="text-[10px] font-mono text-[#2554D7] font-bold">{loc.flag}</span>
                   </div>
                 ))}
               </div>
